@@ -20,6 +20,8 @@ import (
 	"runtime"
 	"strings"
 
+	"scorpion/soong/android"
+
 	"github.com/google/blueprint/proptools"
 )
 
@@ -150,6 +152,8 @@ type variableProperties struct {
 			Cflags []string
 		}
 
+		// include Scorpion variables
+		Scorpion android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -362,6 +366,9 @@ type productVariables struct {
 
 	Device_support_hwfde  *bool `json:",omitempty"`
 	Device_support_hwfde_perf  *bool `json:",omitempty"`
+
+	// include Scorpion variables
+	Scorpion android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {

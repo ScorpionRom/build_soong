@@ -20,6 +20,8 @@ import (
 	"runtime"
 	"strings"
 
+	"dirty/soong/android"
+
 	"github.com/google/blueprint/proptools"
 )
 
@@ -143,6 +145,8 @@ type variableProperties struct {
 			Whole_static_libs []string
 		}
 
+		// include Dirty variables
+		Dirty android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -311,6 +315,9 @@ type productVariables struct {
 	Device_support_hwfde  *bool `json:",omitempty"`
 	Device_support_hwfde_perf  *bool `json:",omitempty"`
 	Target_init_vendor_lib  *string `json:",omitempty"`
+
+	// include Dirty variables
+	Dirty android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {

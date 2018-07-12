@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"gzosp/soong/android"
+	"scorpion/soong/android"
 
 	"github.com/google/blueprint/proptools"
 )
@@ -97,8 +97,8 @@ type variableProperties struct {
 			Enabled *bool
 		}
 
-		// include GZOSP variables
-		Gzosp android.Product_variables
+		// include SCORPION variables
+		Scorpion android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -173,8 +173,8 @@ type productVariables struct {
 
 	DeviceKernelHeaders []string `json:",omitempty"`
 
-	// include GZOSP variables
-	Gzosp android.ProductVariables
+	// include SCORPION variables
+	Scorpion android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {

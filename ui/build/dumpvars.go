@@ -88,7 +88,7 @@ func dumpMakeVars(ctx Context, config Config, goals, vars []string, write_soong_
 var BannerVars = []string{
 	"PLATFORM_VERSION_CODENAME",
 	"PLATFORM_VERSION",
-	"GZOSP_VERSION",
+	"SCORPION_VERSION",
 	"TARGET_PRODUCT",
 	"TARGET_BUILD_VARIANT",
 	"TARGET_BUILD_TYPE",
@@ -119,18 +119,24 @@ var BannerVars = []string{
 func Banner(make_vars map[string]string) string {
 	b := &bytes.Buffer{}
 
-	fmt.Fprintln(b, "=============================================================")
-	fmt.Fprintln(b, "  @@@@@@@@  @@@@@@@@   @@@@@@    @@@@@@   @@@@@@@   ")
-	fmt.Fprintln(b, " @@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@   @@@@@@@@  ")
-	fmt.Fprintln(b, " !@@             @@!  @@!  @@@  !@@       @@!  @@@  ")
-	fmt.Fprintln(b, " !@!            !@!   !@!  @!@  !@!       !@!  @!@  ")
-	fmt.Fprintln(b, " !@! @!@!@     @!!    @!@  !@!  !!@@!!    @!@@!@!   ")
-	fmt.Fprintln(b, " !!! !!@!!    !!!     !@!  !!!   !!@!!!   !!@!!!    ")
-	fmt.Fprintln(b, " :!!   !!:   !!:      !!:  !!!       !:!  !!:       ")
-	fmt.Fprintln(b, " :!:   !::  :!:       :!:  !:!      !:!   :!:       ")
-	fmt.Fprintln(b, "  ::: ::::   :: ::::  ::::: ::  :::: ::    ::       ")
-	fmt.Fprintln(b, "  :: :: :   : :: : :   : :  :   :: : :     :        ")
-	fmt.Fprintln(b, "=============================================================")
+	fmt.Fprintln(b, "         *********************************************************** ")
+	fmt.Fprintln(b, "                                                                     ")
+	fmt.Fprintln(b, "                                                 d8b                 ")
+	fmt.Fprintln(b, "                                                 Y8P                 ")
+	fmt.Fprintln(b, "                                                                     ")
+	fmt.Fprintln(b, "          .d8888b  .d8888b .d88b. 888d88888888b. 888 .d88b. 88888b.  ")
+	fmt.Fprintln(b, "          88K     d88P    d88  88b888P  888  88b888d88  88b888  88b  ")
+	fmt.Fprintln(b, "           Y8888b.888     888   888888  888  888888888  888888  888  ")
+	fmt.Fprintln(b, "               X88Y88b.   Y88. .88P888  888 d88P888Y88..88P888  888  ")
+	fmt.Fprintln(b, "           88888P'  Y8888P  Y88P  888   88888P  888  Y88P  888  888  ")
+	fmt.Fprintln(b, "                                        888                          ")
+	fmt.Fprintln(b, "                                        888                          ")
+	fmt.Fprintln(b, "                                        888                          ")
+	fmt.Fprintln(b, "                                                                     ")
+	fmt.Fprintln(b, "                                  Feel The Sting                     ")
+	fmt.Fprintln(b, "                                                                     ")
+	fmt.Fprintln(b, "         *********************************************************** ")
+	fmt.Fprintln(b, "                                                                     ")
 	fmt.Fprintf(b, "%s=%s\n", "HOST_ARCH", make_vars["HOST_ARCH"])
 	fmt.Fprintf(b, "%s=%s\n", "HOST_2ND_ARCH", make_vars["HOST_2ND_ARCH"])
 	fmt.Fprintf(b, "%s=%s\n", "HOST_OS", make_vars["HOST_OS"])
@@ -139,7 +145,7 @@ func Banner(make_vars map[string]string) string {
 	fmt.Fprintf(b, "%s=%s\n", "HOST_CROSS_ARCH", make_vars["HOST_CROSS_ARCH"])
 	fmt.Fprintf(b, "%s=%s\n", "HOST_CROSS_2ND_ARCH", make_vars["HOST_CROSS_2ND_ARCH"])
 	fmt.Fprintln(b, "=============================================================")
-	fmt.Fprintf(b, "%s=%s\n", "GZOSP_VERSION", make_vars["GZOSP_VERSION"])
+	fmt.Fprintf(b, "%s=%s\n", "SCORPION_VERSION", make_vars["SCORPION_VERSION"])
 	fmt.Fprintf(b, "%s=%s\n", "BUILD_ID", make_vars["BUILD_ID"])
 	fmt.Fprintf(b, "%s=%s\n", "OUT_DIR", make_vars["OUT_DIR"])
 	fmt.Fprintln(b, "=============================================================")

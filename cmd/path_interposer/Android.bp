@@ -16,9 +16,9 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-blueprint_go_binary {
+/* blueprint_go_binary {
     name: "path_interposer",
     deps: ["soong-ui-build-paths"],
     srcs: ["main.go"],
     testSrcs: ["main_test.go"],
-}
+} */

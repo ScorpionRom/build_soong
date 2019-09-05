@@ -17,24 +17,9 @@ package {
 }
 
 bootstrap_go_package {
-    name: "soong-ui-build-paths",
-    pkgPath: "android/soong/ui/build/paths",
-    srcs: [
-        "paths/config.go",
-        "paths/logs.go",
-    ],
-    testSrcs: [
-        "paths/logs_test.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-ui-build",
     pkgPath: "android/soong/ui/build",
     deps: [
-        "blueprint",
-        "blueprint-bootstrap",
-        "soong-ui-build-paths",
         "soong-ui-logger",
         "soong-ui-metrics",
         "soong-ui-status",
@@ -57,7 +42,6 @@ bootstrap_go_package {
         "goma.go",
         "kati.go",
         "ninja.go",
-        "path.go",
         "proc_sync.go",
         "rbe.go",
         "signal.go",

@@ -213,8 +213,6 @@ func Build(ctx Context, config Config) {
 
 	ensureEmptyDirectoriesExist(ctx, config.TempDir())
 
-	SetupPath(ctx, config)
-
 	what := RunAll
 	if config.UseBazel() {
 		what = RunAllWithBazel
@@ -237,10 +235,6 @@ func Build(ctx Context, config Config) {
 	if config.SkipNinja() {
 		ctx.Verboseln("Skipping Ninja as requested")
 		what = what &^ RunNinja
-	}
-
-	if config.StartGoma() {
-		startGoma(ctx, config)
 	}
 
 	if config.StartRBE() {

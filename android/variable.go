@@ -147,6 +147,11 @@ type variableProperties struct {
 			Srcs         []string `android:"arch_variant"`
 			Exclude_srcs []string `android:"arch_variant"`
 		} `android:"arch_variant"`
+
+		Target_init_vendor_lib struct {
+			Whole_static_libs []string
+		}
+
 	} `android:"arch_variant"`
 }
 
@@ -371,6 +376,8 @@ type productVariables struct {
 	InstallExtraFlattenedApexes *bool `json:",omitempty"`
 
 	BoardUsesRecoveryAsBoot *bool `json:",omitempty"`
+
+	Target_init_vendor_lib  *string `json:",omitempty"`
 
 	BoardKernelBinaries                []string `json:",omitempty"`
 	BoardKernelModuleInterfaceVersions []string `json:",omitempty"`
